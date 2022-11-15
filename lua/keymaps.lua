@@ -54,3 +54,8 @@ map('n', 'K', ':lua vim.lsp.buf.hover()<cr>', opts)
 map('n', '<c-k>', ':lua vim.lsp.buf.signature_help()<cr>', opts)
 map('n', '<leader>af', ':lua vim.lsp.buf.code_action()<cr>', opts)
 map('n', '<leader>rn', ':lua vim.lsp.buf.rename()<cr>', opts)
+
+--[[
+MarkdownPreview
+]]
+map('n', '<C-m>', ':MarkdownPreviewToggle<cr>', opts)
