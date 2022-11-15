@@ -1,7 +1,7 @@
 local dap = require('dap')
 dap.adapters.lldb = {
 	type = 'executable',
-	command = '/home/linuxbrew/.linuxbrew/bin/lldb-vscode', -- adjust as needed
+	command = 'lldb-vscode', -- adjust as needed
 	name = "lldb"
 }
 
