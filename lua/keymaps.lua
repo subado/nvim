@@ -58,4 +58,4 @@ map('n', '<leader>rn', ':lua vim.lsp.buf.rename()<cr>', opts)
 --[[
 MarkdownPreview
 ]]
-map('n', '<C-m>', ':MarkdownPreviewToggle<cr>', opts)
+map('n', '<C-w>m', ':MarkdownPreviewToggle<cr>', opts)
