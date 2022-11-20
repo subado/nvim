@@ -57,5 +57,10 @@ map('n', '<leader>rn', ':lua vim.lsp.buf.rename()<cr>', opts)
 
 --[[
 MarkdownPreview
-]]
+ ]]
 map('n', '<C-w>m', ':MarkdownPreviewToggle<cr>', opts)
+
+--[[
+Highlight colors
+ ]]
+map('n', '<C-c>', ':HighlightColorsToggle<cr>', opts)
