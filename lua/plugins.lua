@@ -170,6 +170,13 @@ Autocompletion
 	end
 
 	use 'powerman/vim-plugin-ruscmd'
+	-- Adds indentation guides to all lines
+	use {
+		'lukas-reineke/indent-blankline.nvim',
+		config = function()
+			require'plugins.indent_blankline'
+		end,
+	}
 
 	use 'brenoprata10/nvim-highlight-colors' -- Highlight colors with neovim
 
