@@ -171,5 +171,7 @@ Autocompletion
 
 	use 'powerman/vim-plugin-ruscmd'
 
+	use 'brenoprata10/nvim-highlight-colors' -- Highlight colors with neovim
+
 	use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 end)
