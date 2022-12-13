@@ -8,9 +8,6 @@ local opt = vim.opt		-- global/buffer/windows-scoped options
 
 vim.diagnostic.config {
 	virtual_text = false,
-	underline = true,	-- Keep error underline
-	signs = true,	-- Keep gutter signs
+	underline = true, -- Keep error underline
+	signs = true, -- Keep gutter signs
 }
-
-
-
