@@ -6,6 +6,10 @@ local opt = vim.opt		-- global/buffer/windows-scoped options
 -- Main
 -- ]]
 
+
+local pywal = require('pywal')
+pywal.setup()
+
 vim.diagnostic.config {
 	virtual_text = false,
 	underline = true, -- Keep error underline

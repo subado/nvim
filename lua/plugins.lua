@@ -38,7 +38,10 @@ Appearance
 	--use 'feline-nvim/feline.nvim'
 
 	-- Nord theme
-	use 'arcticicestudio/nord-vim'
+	-- use 'arcticicestudio/nord-vim'
+
+	-- Pywal
+	use { 'AlphaTechnolog/pywal.nvim', as = 'pywal' }
 
 	-- Icons
 	use 'onsails/lspkind-nvim'

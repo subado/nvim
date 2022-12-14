@@ -14,11 +14,6 @@ cmd[[
 autocmd TextYankPost * silent!lua require('vim.highlight').on_yank({higroup = 'Visual', timeout = 200})
 ]]
 
--- Apply colorscheme
-cmd[[
-colorscheme nord
-]]
-
 -- 2 spaces for selected filetypes
 cmd[[
 autocmd FileType xml,html,xhtml,css,scss,javascript,lua,yaml,htmljinja setlocal shiftwidth=2 tabstop=2

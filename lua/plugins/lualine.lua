@@ -3,7 +3,7 @@
 require('lualine').setup({
 	options = {
 		icons_enabled = true,
-		theme = 'nord',
+		theme = 'pywal-nvim',
 		component_separators = { left = '', right = ''},
 		section_separators = {left = '', right = ''},
 		disabled_filetypes = {},
