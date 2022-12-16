@@ -1,16 +1,23 @@
+--[[
+if packer.nvim isn't installed then
+the function will automatically install it and return true,
+else it will simply return false
+]]
+local ensure_packer = function()
 local fn = vim.fn
 local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 if fn.empty(fn.glob(install_path)) > 0 then
-	packer_bootstrap = fn.system {
-		'git',
-		'clone',
-		'--depth',
-		'1',
-		'https://github.com/wbthomason/packer.nvim',
-		install_path}
+	fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
 	vim.cmd [[packadd packer.nvim]]
+	return true
+end
+return false
 end
 
+local packer_bootstrap = ensure_packer()
+
+
+-- configure Neovim to automatically run :PackerCompile whenever plugins.lua is updated
 vim.cmd([[
 	augroup packer_user_config
 		autocmd!
@@ -18,8 +25,8 @@ vim.cmd([[
 	augroup end
 ]])
 
+return require('packer').startup(function(use)
 
-return require('packer').startup(function()
 	-- Packer can manage itself
 	use 'wbthomason/packer.nvim'
 
@@ -45,8 +52,6 @@ Appearance
 
 	-- Icons
 	use 'onsails/lspkind-nvim'
-	use 'ryanoasis/vim-devicons'
-	use 'kyazdani42/nvim-web-devicons'
 
 	-- Super fast git decorations
 	use 'lewis6991/gitsigns.nvim'
@@ -71,21 +76,16 @@ Appearance
 --[[
 LSP
 ]]
-
 	-- Collection of configurations for built-in LSP client
 	use {
-		'neovim/nvim-lspconfig',
+			"williamboman/mason.nvim",
+			"williamboman/mason-lspconfig.nvim",
+			"neovim/nvim-lspconfig",
 	}
-	use {
-		'williamboman/nvim-lsp-installer',
-	}
-
-	use 'jose-elias-alvarez/null-ls.nvim' -- for formatters and linters
-
 	use {
 		'p00f/clangd_extensions.nvim',
 		config = function()
-			require('plugins.clangd')
+			require('plugins.clangd_extensions')
 		end
 	}
 
@@ -101,13 +101,9 @@ Autocompletion
 	}
 	use 'hrsh7th/cmp-nvim-lsp'
 	use 'hrsh7th/cmp-buffer'
-	use 'saadparwaiz1/cmp_luasnip'
 
 	-- Autocompletion for file system
 	use 'hrsh7th/cmp-path'
-
-	-- Snippets plugin
-	use 'L3MON4D3/LuaSnip'
 
 -- [[
 -- Files
@@ -173,6 +169,7 @@ Autocompletion
 	end
 
 	use 'powerman/vim-plugin-ruscmd'
+
 	-- Adds indentation guides to all lines
 	use {
 		'lukas-reineke/indent-blankline.nvim',
@@ -181,7 +178,18 @@ Autocompletion
 		end,
 	}
 
-	use 'brenoprata10/nvim-highlight-colors' -- Highlight colors with neovim
+	-- Highlight colors with neovim
+	use 'brenoprata10/nvim-highlight-colors'
 
-	use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+	-- Preview markdown on your modern browser with synchronised scrolling and flexible configuration
+	use({
+			"iamcco/markdown-preview.nvim",
+			run = function() vim.fn["mkdp#util#install"]() end,
+	})
+
+	-- Automatically set up your configuration after cloning packer.nvim
+	-- Put this at the end after all plugins
+	if packer_bootstrap then
+		require('packer').sync()
+	end
 end)

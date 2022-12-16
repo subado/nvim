@@ -30,18 +30,10 @@ local kind_icons = {
 	Operator = "",
 	TypeParameter = ""
 }
--- luasnip setup
-local luasnip = require 'luasnip'
-
 local cmp = require('cmp')
 
 -- nvim-cmp setup
 cmp.setup {
-	snippet = {
-		expand = function(args)
-			luasnip.lsp_expand(args.body) -- For `luasnip` users.
-		end,
-	},
 	mapping = {
 		["<C-k>"] = cmp.mapping.select_prev_item(),
 		["<C-j>"] = cmp.mapping.select_next_item(),
@@ -64,7 +56,6 @@ cmp.setup {
 			-- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
 			vim_item.menu = ({
 				nvim_lsp = "[LSP]",
-				luasnip = "[Snippet]",
 				buffer = "[Buffer]",
 				path = "[Path]",
 			})[entry.source.name]
@@ -73,8 +64,8 @@ cmp.setup {
 	},
 	sources = {
 		{ name = "nvim_lsp" },
-		{ name = "luasnip" },
 		{ name = "path" },
+		{ name = "buffer" },
 	},
 	confirm_opts = {
 		behavior = cmp.ConfirmBehavior.Replace,
@@ -89,4 +80,12 @@ cmp.setup {
 		ghost_text = false,
 		native_menu = false,
 	},
+}
+
+-- The nvim-cmp almost supports LSP's capabilities so You should advertise it to LSP servers..
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+-- The following example advertise capabilities to `clangd`.
+require'lspconfig'.clangd.setup {
+  capabilities = capabilities,
 }
