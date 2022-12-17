@@ -185,6 +185,9 @@ Autocompletion
 	use({
 			"iamcco/markdown-preview.nvim",
 			run = function() vim.fn["mkdp#util#install"]() end,
+			config = function()
+				require 'plugins.markdown-preview'
+			end,
 	})
 
 	-- Automatically set up your configuration after cloning packer.nvim
