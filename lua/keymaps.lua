@@ -43,17 +43,25 @@ map('n', '<F2>', ':TagbarToggle<CR>', opts)
 --[[
 LSP
  ]]
-map('n', 'gd', ':lua vim.lsp.buf.definition()<cr>', opts)
-map('n', 'gD', ':lua vim.lsp.buf.declaration()<cr>', opts)
-map('n', 'gi', ':lua vim.lsp.buf.implementation()<cr>', opts)
+map('n', '<Space>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
+map('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
+map('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
+map('n', '<space>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
+map("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
+map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+map("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+map("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
+map("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+map("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
+map("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+map("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
+map("n", "<leader>f", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
+map("n", "[d", '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', opts)
+map( "n", "gl", '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics({ border = "rounded" })<CR>', opts)
+map("n", "]d", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
 map('n', 'gw', ':lua vim.lsp.buf.document_symbol()<cr>', opts)
 map('n', 'gw', ':lua vim.lsp.buf.workspace_symbol()<cr>', opts)
-map('n', 'gr', ':lua vim.lsp.buf.references()<cr>', opts)
 map('n', 'gt', ':lua vim.lsp.buf.type_definition()<cr>', opts)
-map('n', 'K', ':lua vim.lsp.buf.hover()<cr>', opts)
-map('n', '<c-k>', ':lua vim.lsp.buf.signature_help()<cr>', opts)
-map('n', '<leader>af', ':lua vim.lsp.buf.code_action()<cr>', opts)
-map('n', '<leader>rn', ':lua vim.lsp.buf.rename()<cr>', opts)
 
 --[[
 MarkdownPreview

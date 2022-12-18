@@ -50,9 +50,6 @@ Appearance
 	-- Pywal
 	use { 'AlphaTechnolog/pywal.nvim', as = 'pywal' }
 
-	-- Icons
-	use 'onsails/lspkind-nvim'
-
 	-- Super fast git decorations
 	use 'lewis6991/gitsigns.nvim'
 
@@ -70,6 +67,14 @@ Appearance
 		'nvim-treesitter/nvim-treesitter',
 		config = function()
 			require('plugins.treesitter')
+		end,
+	}
+
+	-- Icons
+	use {
+		'onsails/lspkind.nvim',
+		config = function()
+			require('plugins.lspkind')
 		end,
 	}
 
@@ -95,15 +100,30 @@ Autocompletion
 
 	use {
 		'hrsh7th/nvim-cmp',
+
+		requires = {
+			'hrsh7th/cmp-nvim-lsp',
+			'hrsh7th/cmp-buffer',
+			'hrsh7th/cmp-path',
+			'hrsh7th/cmp-cmdline',
+		},
+
 		config = function()
 			require('plugins.cmp')
 		end,
 	}
-	use 'hrsh7th/cmp-nvim-lsp'
-	use 'hrsh7th/cmp-buffer'
 
-	-- Autocompletion for file system
-	use 'hrsh7th/cmp-path'
+	use {
+		'L3MON4D3/LuaSnip',
+
+		requires = {
+			'saadparwaiz1/cmp_luasnip',
+			'rafamadriz/friendly-snippets',
+		},
+		config = function ()
+			require'plugins.luasnip'
+		end,
+	}
 
 -- [[
 -- Files
