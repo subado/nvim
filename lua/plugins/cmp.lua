@@ -93,6 +93,16 @@ cmp.setup {
 	},
 }
 
+cmp.setup.filetype({ 'markdown', 'help' }, {
+	sources = {
+		{ name = 'path' },
+	},
+	window = {
+		documentation = cmp.config.disable
+	}
+})
+
+
 -- The nvim-cmp almost supports LSP's capabilities so You should advertise it to LSP servers..
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
