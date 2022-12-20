@@ -101,14 +101,3 @@ cmp.setup.filetype({ 'markdown', 'help' }, {
 		documentation = cmp.config.disable
 	}
 })
-
-
--- The nvim-cmp almost supports LSP's capabilities so You should advertise it to LSP servers..
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
-
-local lsp_servers = { 'clangd', 'pylsp', 'sumneko_lua', 'bashls' }
-for _, server in ipairs(lsp_servers) do
-	require('lspconfig')[server].setup {
-		capabilities = capabilities,
-	}
-end

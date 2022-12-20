@@ -1,1 +1,3 @@
-require'lspconfig'.bashls.setup{}
+local M = {}
+
+return M
