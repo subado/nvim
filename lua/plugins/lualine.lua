@@ -42,7 +42,8 @@ require('lualine').setup({
 		return msg
 	end,
 	icon = ' LSP:',
-	color = { fg = '#81A1C1'},
+	color = { fg = require('pywal.core').get_colors().color5 }
+
 			},
 		},
 		lualine_x = {
