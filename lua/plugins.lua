@@ -48,7 +48,14 @@ Appearance
 	-- use 'arcticicestudio/nord-vim'
 
 	-- Pywal
-	use { 'AlphaTechnolog/pywal.nvim', as = 'pywal' }
+	use {
+		'AlphaTechnolog/pywal.nvim',
+		as = 'pywal',
+		config = function()
+			require('plugins.pywal')
+		end,
+
+	}
 
 	-- Super fast git decorations
 	use 'lewis6991/gitsigns.nvim'
