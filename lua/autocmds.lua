@@ -59,7 +59,3 @@ cmd
 [[
 set mouse=a
 ]]
-
-cmd[[
-set noai nocin nosi inde=
-]]
