@@ -26,13 +26,13 @@ local on_attach = function(client, bufnr)
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 local lsp_servers = require("mason-lspconfig").get_installed_servers()
-local default = { 
+local default = {
 	capabilities = capabilities,
 	on_attach = on_attach,
 }
 
 for _, server in ipairs(lsp_servers) do
-	local custom = require('plugins.lsp.settings.' .. server)
+	local custom = require('plugins.lsp.configs.' .. server)
 	for k,v in pairs(default) do custom[k] = v end
 	require('lspconfig')[server].setup(custom)
 end

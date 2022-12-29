@@ -57,3 +57,13 @@ map('n', '<C-w>m', ':MarkdownPreviewToggle<cr>', opts)
 Highlight colors
  ]]
 map('n', '<C-c>', ':HighlightColorsToggle<cr>', opts)
+
+--[[
+nvim-dap
+ ]]
+map('n', '<F5>', '<cmd>:lua require("dap").continue()<cr>', opts)
+map('n', '<F3>', '<cmd>:lua require("dap").terminate()<cr>', opts)
+map('n', '<F9>', '<cmd>lua require("dap").toggle_breakpoint()<cr>', opts)
+map('n', '<F10>', '<cmd>:lua require("dap").step_over()<cr>', opts)
+map('n', '<F11>', '<cmd>:lua require("dap").step_into()<cr>', opts)
+map('n', '<F12>', '<cmd>:lua require("dap").step_out()<cr>', opts)

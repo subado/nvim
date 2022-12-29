@@ -168,19 +168,13 @@ Autocompletion
 	use {
 		"mfussenegger/nvim-dap",
 		config = function ()
-			require('plugins.dap')
+			require('plugins.dap.init')
 		end
 	}
 
 	use {
 		"rcarriga/nvim-dap-ui",
-		requires = {},
-		config = function ()
-			require('plugins.dap-ui')
-		end,
 	}
-
-	use "Pocco81/DAPInstall.nvim"
 
 -- [[
 -- Sugar
