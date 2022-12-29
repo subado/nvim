@@ -1,6 +1,6 @@
 local cmd = vim.cmd
 
-cmd[[
+--[[ cmd[[
 autocmd FileType cpp,c,hpp,h setl noai nocin nosi inde=
 ]]
 
