@@ -90,9 +90,12 @@ LSP
 ]]
 	-- Collection of configurations for built-in LSP client
 	use {
-			"williamboman/mason.nvim",
-			"williamboman/mason-lspconfig.nvim",
-			"neovim/nvim-lspconfig",
+		"williamboman/mason.nvim",
+		"williamboman/mason-lspconfig.nvim",
+		"neovim/nvim-lspconfig",
+		config = function()
+			require('plugins.lsp.init')
+		end
 	}
 	use {
 		'p00f/clangd_extensions.nvim',
@@ -174,6 +177,10 @@ Autocompletion
 
 	use {
 		"rcarriga/nvim-dap-ui",
+	}
+
+	use {
+		"jayp0521/mason-nvim-dap.nvim",
 	}
 
 -- [[
