@@ -3,6 +3,12 @@ local dap = require('dap')
 require('plugins.dap.mason-nvim-dap')
 
 --[[
+SIGNS CONFIGURATION
+ ]]
+vim.fn.sign_define('DapBreakpoint', {text='🔴', texthl='', linehl='', numhl=''})
+vim.fn.sign_define('DapStopped', {text='➡️', texthl='', linehl='', numhl=''})
+
+--[[
 Languages configurations
  ]]
 require('plugins.dap.configs.cpp')
