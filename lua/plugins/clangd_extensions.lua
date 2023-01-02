@@ -1,7 +1,15 @@
-require("clangd_extensions").setup {
+--[[
+If you prefer to integrate clangd_extensions into your own LSP setup,
+require("clangd_extensions").prepare() applies passed configuration to clangd_extensions and
+returns lspconfig configuration table for further processing.
+Any customisations passed to server config field will be present in this returned configuration.
+ ]]
+
+local M = require("clangd_extensions").prepare({
 		server = {
 				-- options to pass to nvim-lspconfig
 				-- i.e. the arguments to require("lspconfig").clangd.setup({})
+			cmd = { "clangd", "--completion-style=detailed" },
 		},
 		extensions = {
 				-- defaults:
@@ -67,4 +75,6 @@ require("clangd_extensions").setup {
 						border = "none",
 				},
 		},
-}
+})
+
+return M

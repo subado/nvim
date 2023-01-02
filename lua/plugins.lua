@@ -99,9 +99,6 @@ LSP
 	}
 	use {
 		'p00f/clangd_extensions.nvim',
-		config = function()
-			require('plugins.clangd_extensions')
-		end
 	}
 
 --[[

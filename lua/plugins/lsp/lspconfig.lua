@@ -1,5 +1,9 @@
 local bmap = require('maps').bmap
 
+
+local custom_on_attach =  function(client, bufnr)
+	end
+
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
@@ -20,7 +24,9 @@ local on_attach = function(client, bufnr)
 	vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
 	vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
 	vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-	vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)end
+	vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
+	custom_on_attach(client, bufnr)
+end
 
 -- The nvim-cmp almost supports LSP's capabilities so You should advertise it to LSP servers..
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
@@ -33,6 +39,11 @@ local default = {
 
 for _, server in ipairs(lsp_servers) do
 	local custom = require('plugins.lsp.configs.' .. server)
+
+	if custom.on_attach ~= nil then
+		custom_on_attach = custom.on_attach
+	end
 	for k,v in pairs(default) do custom[k] = v end
+
 	require('lspconfig')[server].setup(custom)
 end

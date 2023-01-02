@@ -1,9 +1,2 @@
-local M = {}
-
-M.settings = {
-	cpp = {
-		cmd = { "clangd", "--completion-style=detailed" }
-	},
-}
-
+local M = require('plugins.clangd_extensions')
 return M
