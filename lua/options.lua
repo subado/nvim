@@ -2,11 +2,8 @@ local options = {
 	termguicolors = true, -- h24-bit RGB colors
 	tabstop = 4, -- 1 tab == 4 spaces
 	shiftwidth = 4, -- 1 tab == 4 spaces
-	-- smartindent = false, -- autoindent new lines
-	-- smarttab = true,
-	--[[ noautoindent = false,
-	nocindent = false,
-	nosmartindent = false, ]]
+	cindent = true,
+	cino = "g0:0b1",
 	number = true, -- lines numeration
 	relativenumber = true, -- number relative curent line number
 	so=99, -- cursor always in center
