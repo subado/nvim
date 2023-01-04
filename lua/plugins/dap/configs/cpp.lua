@@ -87,8 +87,8 @@ dap.configurations.cpp = {
 		setupCommands = {
 			{
 				 text = '-enable-pretty-printing',
-				 description =	'enable pretty printing',
-				 ignoreFailures = false
+				 description = 'enable pretty printing',
+				 ignoreFailures = true,
 			},
 		},
 	},
@@ -107,8 +107,8 @@ dap.configurations.cpp = {
 		setupCommands = {
 			{
 				 text = '-enable-pretty-printing',
-				 description =	'enable pretty printing',
-				 ignoreFailures = false
+				 description = 'enable pretty printing',
+				 ignoreFailures = true
 			},
 		}
 	},
