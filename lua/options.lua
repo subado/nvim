@@ -3,7 +3,7 @@ local options = {
 	tabstop = 4, -- 1 tab == 4 spaces
 	shiftwidth = 4, -- 1 tab == 4 spaces
 	cindent = true,
-	cino = "g0:0b1",
+	cino = "g0:0",
 	number = true, -- lines numeration
 	relativenumber = true, -- number relative curent line number
 	so=99, -- cursor always in center
