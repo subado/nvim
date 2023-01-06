@@ -10,11 +10,11 @@ require('mason-tool-installer').setup {
 		{ 'bash-language-server', auto_update = true },
 		{ 'lua-language-server', auto_update = true },
 		{ 'python-lsp-server', auto_update = true },
-		{ 'clangd',  auto_update = true },
-		{ 'neocmakelsp',  auto_update = true },
+		{ 'clangd', auto_update = true },
+		{ 'neocmakelsp', auto_update = true },
 
 		-- Formatter
-		{ 'clang-format',  auto_update = true },
+		{ 'clang-format', auto_update = true },
 	},
 
 	-- if set to true this will check each tool for updates. If updates
@@ -35,3 +35,12 @@ require('mason-tool-installer').setup {
 	-- Default: 0
 	start_delay = 3000, -- 3 second delay
 }
+
+vim.api.nvim_create_autocmd('User', {
+	pattern = 'MasonToolsUpdateCompleted',
+	callback = function()
+		vim.schedule(function()
+			print 'mason-tool-installer has finished'
+		end)
+	end,
+})
