@@ -16,7 +16,7 @@ autocmd TextYankPost * silent!lua require('vim.highlight').on_yank({higroup = 'V
 
 -- 2 spaces for selected filetypes
 cmd[[
-autocmd FileType xml,html,xhtml,css,scss,javascript,lua,yaml,htmljinja setlocal shiftwidth=2 tabstop=2
+autocmd FileType xml,html,xhtml,css,scss,javascript,lua,yaml,htmljinja,json setlocal shiftwidth=2 tabstop=2
 ]]
 
 -- don't auto commenting new lines
