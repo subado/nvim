@@ -124,7 +124,7 @@ _G.packer_plugins = {
   ["friendly-snippets"] = {
     loaded = true,
     path = "/home/subado/.local/share/nvim/site/pack/packer/start/friendly-snippets",
-    url = "https://github.com/rafamadriz/friendly-snippets"
+    url = "https://github.com/subado/friendly-snippets"
   },
   ["gitsigns.nvim"] = {
     loaded = true,

@@ -126,7 +126,7 @@ Autocompletion
 
 		requires = {
 			'saadparwaiz1/cmp_luasnip',
-			'rafamadriz/friendly-snippets',
+			'subado/friendly-snippets',
 		},
 		config = function ()
 			require'plugins.luasnip'
