@@ -16,6 +16,8 @@ require('plugins.dap.configs.cpp')
 dap.configurations.c = dap.configurations.cpp
 dap.configurations.rust = dap.configurations.cpp
 
+require('plugins.dap.configs.bash')
+
 require('plugins.dap.configs.python')
 
 require('plugins.dap.dapui')
