@@ -1,6 +1,3 @@
-local bmap = require('maps').bmap
-
-
 local custom_on_attach =  function(client, bufnr)
 	end
 
