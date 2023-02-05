@@ -7,14 +7,14 @@ require('mason-tool-installer').setup {
 		-- you can turn off/on auto_update per tool
 
 		-- LSP
-		{ 'bash-language-server', auto_update = true },
-		{ 'lua-language-server', auto_update = true },
-		{ 'python-lsp-server', auto_update = true },
-		{ 'clangd', auto_update = true },
-		{ 'neocmakelsp', auto_update = true },
+		{ 'bash-language-server'},
+		{ 'lua-language-server'},
+		{ 'python-lsp-server'},
+		{ 'clangd'},
+		{ 'neocmakelsp'},
 
 		-- Formatter
-		{ 'clang-format', auto_update = true },
+		{ 'clang-format'},
 	},
 
 	-- if set to true this will check each tool for updates. If updates
