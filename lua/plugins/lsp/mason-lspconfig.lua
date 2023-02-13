@@ -1,3 +1,3 @@
 require("mason-lspconfig").setup({
-	ensure_installed = { "sumneko_lua", "clangd", "pylsp", "bashls", "neocmake"}
+	ensure_installed = { "lua_ls", "clangd", "pylsp", "bashls", "neocmake"}
 })
