@@ -12,3 +12,5 @@ vim.diagnostic.config {
 	underline = true, -- Keep error underline
 	signs = true, -- Keep gutter signs
 }
+
+require("themes.Tomorrow-Night")

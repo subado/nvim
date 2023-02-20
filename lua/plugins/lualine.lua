@@ -3,7 +3,7 @@
 require('lualine').setup({
 	options = {
 		icons_enabled = true,
-		theme = 'pywal-nvim',
+		-- theme = '',
 		component_separators = { left = '', right = ''},
 		section_separators = {left = '', right = ''},
 		disabled_filetypes = {},
@@ -42,7 +42,7 @@ require('lualine').setup({
 		return msg
 	end,
 	icon = ' LSP:',
-	color = { fg = require('pywal.core').get_colors().color5 }
+	-- color = {}
 
 			},
 		},

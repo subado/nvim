@@ -11,7 +11,6 @@ require('mason-tool-installer').setup {
 		{ 'lua-language-server'},
 		{ 'python-lsp-server'},
 		{ 'clangd'},
-		{ 'neocmakelsp'},
 
 		-- Formatter
 		{ 'clang-format'},
