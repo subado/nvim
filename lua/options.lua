@@ -1,5 +1,5 @@
 local options = {
-	termguicolors = false, -- h24-bit RGB colors
+	termguicolors = true, -- h24-bit RGB colors
 	tabstop = 4, -- 1 tab == 4 spaces
 	shiftwidth = 4, -- 1 tab == 4 spaces
 	cindent = true,
