@@ -33,11 +33,17 @@ return require('packer').startup(function(use)
 --[[
 Appearance
 ]]
+	use {
+		'Mofiqul/vscode.nvim',
+		config = function()
+			require('plugins.vscode')
+		end,
+	}
 
 	-- Status line
 	use {
 		'nvim-lualine/lualine.nvim',
-		requires = {'kyazdani42/nvim-web-devicons', opt = true},
+		requires = 'kyazdani42/nvim-web-devicons',
 		config = function()
 			require('plugins.lualine')
 		end,
