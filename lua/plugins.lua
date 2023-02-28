@@ -82,10 +82,13 @@ LSP
 ]]
 	-- Collection of configurations for built-in LSP client
 	use {
-		"williamboman/mason.nvim",
-		"williamboman/mason-lspconfig.nvim",
-		'WhoIsSethDaniel/mason-tool-installer.nvim',
-		"neovim/nvim-lspconfig",
+		'neovim/nvim-lspconfig',
+		requires = {
+			'williamboman/mason.nvim',
+			'williamboman/mason-lspconfig.nvim',
+			'WhoIsSethDaniel/mason-tool-installer.nvim',
+			'ray-x/lsp_signature.nvim'
+		},
 		config = function()
 			require('plugins.lsp.init')
 		end
@@ -159,26 +162,26 @@ Autocompletion
 -- Debug
 -- ]]
 	use {
-		"mfussenegger/nvim-dap",
+		'mfussenegger/nvim-dap',
 		config = function ()
 			require('plugins.dap.init')
 		end
 	}
 
 	use {
-		"rcarriga/nvim-dap-ui",
+		'rcarriga/nvim-dap-ui',
 	}
 
 	use {
-		"jayp0521/mason-nvim-dap.nvim",
+		'jayp0521/mason-nvim-dap.nvim',
 	}
 
 -- [[
 -- Sugar
 -- ]]
 	use {
-		"windwp/nvim-autopairs",
-			config = function() require("nvim-autopairs").setup {} end
+		'windwp/nvim-autopairs',
+			config = function() require('nvim-autopairs').setup {} end
 	}
 
 	-- comfortable text commenting
@@ -205,8 +208,8 @@ Autocompletion
 
 	-- Preview markdown on your modern browser with synchronised scrolling and flexible configuration
 	use({
-			"iamcco/markdown-preview.nvim",
-			run = function() vim.fn["mkdp#util#install"]() end,
+			'iamcco/markdown-preview.nvim',
+			run = function() vim.fn['mkdp#util#install']() end,
 			config = function()
 				require 'plugins.markdown-preview'
 			end,
