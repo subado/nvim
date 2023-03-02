@@ -187,8 +187,6 @@ Autocompletion
 	-- comfortable text commenting
 	use 'b3nj5m1n/kommentary'
 
-	use 'sharkdp/fd'
-
 	if packer_bootstrap then
 		require('packer').sync()
 	end

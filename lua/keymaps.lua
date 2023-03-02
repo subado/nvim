@@ -10,8 +10,6 @@ keymap('', '<leader>sf', [[:%s/\ \ \ \ /\t/g<CR>]], opts)
 keymap('', '<leader>st', [[:%s/\ \ /\t/g<CR>]], opts)
 keymap('v', '<Tab>', [[: ><CR>]], opts)
 keymap('v', '<S-Tab>', [[: <<CR>]], opts)
-keymap('n', '<C-h>', '<Left>', opts)
-keymap('n', '<C-l>', '<Right>', opts)
 
 --[[
 Telescope
@@ -24,10 +22,19 @@ keymap('n', '<leader>fh', [[<cmd>lua require('telescope.builtin').help_tags()<CR
 --[[
 Bufferline
  ]]
-keymap('n', '<A-TAB>', ':BufferLineCycleNext<CR>', opts)
-keymap('n', '<C-l>', ':BufferLineCycleNext<CR>', opts)
-keymap('n', '<C-h>', ':BufferLineCyclePrev<CR>', opts)
-keymap('n', '<C-d>', ':BufferLinePickClose<CR>', opts)
+keymap('n', '<A-l>', ':BufferLineCycleNext<CR>', opts)
+keymap('n', '<A-h>', ':BufferLineCyclePrev<CR>', opts)
+keymap('n', '<A-d>', ':BufferLinePickClose<CR>', opts)
+keymap('n', '<A-p>', ':BufferLinePick <CR>', opts)
+keymap('n', '<A-1>', ':BufferLineGoToBuffer 1<CR>', opts)
+keymap('n', '<A-2>', ':BufferLineGoToBuffer 2<CR>', opts)
+keymap('n', '<A-3>', ':BufferLineGoToBuffer 3<CR>', opts)
+keymap('n', '<A-4>', ':BufferLineGoToBuffer 4<CR>', opts)
+keymap('n', '<A-5>', ':BufferLineGoToBuffer 5<CR>', opts)
+keymap('n', '<A-6>', ':BufferLineGoToBuffer 6<CR>', opts)
+keymap('n', '<A-7>', ':BufferLineGoToBuffer 7<CR>', opts)
+keymap('n', '<A-8>', ':BufferLineGoToBuffer 8<CR>', opts)
+keymap('n', '<A-9>', ':BufferLineGoToBuffer 9<CR>', opts)
 
 --[[
 NvimTree
