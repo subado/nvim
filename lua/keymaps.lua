@@ -80,3 +80,8 @@ LuaSnip
 -- For changing choices in choiceNodes (not strictly necessary for a basic setup).
 keymap("i", "<c-n>", '<cmd>:lua require("luasnip").change_choice(1)<cr>', opts)
 keymap("i", "<c-p>", '<cmd>:lua require("luasnip").change_choice(-1)<cr>', opts)
+
+--[[
+treesitter-cpp-tools
+]]
+keymap('v', '<C-d>', '<cmd>:TSCppDefineClassFunc<cr>', opts)

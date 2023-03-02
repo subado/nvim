@@ -213,6 +213,15 @@ Autocompletion
 			end,
 	})
 
+	-- Experimental treesitter based neovim plugin to create intelligent implementations for C++
+	use {
+		requires = { "nvim-treesitter/nvim-treesitter" },
+		"Badhi/nvim-treesitter-cpp-tools",
+		config = function()
+				require 'plugins.treesitter-cpp-tools'
+		end,
+	}
+
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if packer_bootstrap then
