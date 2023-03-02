@@ -3,7 +3,7 @@ require('nvim-treesitter.configs').setup({
 		enable = true,
 		preview = {
 			quit = 'q', -- optional keymapping for quit preview
-			accept = '<C-Space>' -- optional keymapping for accept preview
+			accept = '<Tab>' -- optional keymapping for accept preview
 		},
 		custom_define_class_function_commands = { -- optional
 			TSCppImplWrite = {
