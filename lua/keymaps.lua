@@ -85,3 +85,4 @@ keymap("i", "<c-p>", '<cmd>:lua require("luasnip").change_choice(-1)<cr>', opts)
 treesitter-cpp-tools
 ]]
 keymap('v', '<C-d>', '<cmd>:TSCppDefineClassFunc<cr>', opts)
+keymap('n', '<C-d>', '<cmd>:TSCppDefineClassFunc<cr>', opts)
