@@ -1,8 +1,10 @@
-require'nvim-treesitter.configs'.setup {
-	ensure_installed = {"cpp", "python", "lua", "bash", "javascript"}, -- Only use parsers that are maintained
+require 'nvim-treesitter.configs'.setup {
+	ensure_installed = { "cpp", "python", "lua", "bash", "javascript" }, -- Only use parsers that are maintained
 
 	highlight = {
 		enable = true
-	}
-
+	},
+	indent = {
+		enable = true,
+	},
 }
