@@ -8,6 +8,8 @@ Simple maps
 keymap('n', '<leader>/', ':nohl<CR>', opts)
 keymap('v', '<Tab>', [[: ><CR>]], opts)
 keymap('v', '<S-Tab>', [[: <<CR>]], opts)
+keymap('n', '<C-w>,', [[<cmd>vert res -10<CR>]], opts)
+keymap('n', '<C-w>.', [[<cmd>vert res +10<CR>]], opts)
 
 --[[
 Telescope
