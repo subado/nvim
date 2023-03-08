@@ -7,7 +7,7 @@ require('mason-tool-installer').setup {
 
     -- Formatter
     { 'clang-format' },
-    { 'prettier' },
+    { 'prettierd' },
     { 'stylua' },
   },
   -- if set to true this will check each tool for updates. If updates

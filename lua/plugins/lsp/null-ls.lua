@@ -4,7 +4,7 @@ local formatting = null_ls.builtins.formatting
 
 local sources = {
   formatting.stylua,
-  formatting.prettier,
+  formatting.prettierd,
   formatting.clang_format,
 }
 
