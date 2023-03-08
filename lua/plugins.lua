@@ -181,7 +181,9 @@ Autocompletion
 -- ]]
 	use {
 		'windwp/nvim-autopairs',
-			config = function() require('nvim-autopairs').setup {} end
+		config = function ()
+			require('plugins.autopairs')
+		end
 	}
 
 	-- comfortable text commenting
