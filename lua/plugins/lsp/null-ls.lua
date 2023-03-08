@@ -24,4 +24,7 @@ require('null-ls').setup {
       })
     end
   end,
+  on_init = function(new_client, _)
+    new_client.offset_encoding = 'utf-16'
+  end,
 }
