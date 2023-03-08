@@ -1,4 +1,4 @@
-require('mason-tool-installer').setup({
+require('mason-tool-installer').setup {
   -- a list of all tools you want to ensure are installed upon
   -- start; they should be the names Mason uses for each tool
   ensure_installed = {
@@ -25,7 +25,7 @@ require('mason-tool-installer').setup({
   -- e.g.: 5000 = 5 second delay, 10000 = 10 second delay, etc...
   -- Default: 0
   start_delay = 3000, -- 3 second delay
-})
+}
 
 vim.api.nvim_create_autocmd('User', {
   pattern = 'MasonToolsUpdateCompleted',

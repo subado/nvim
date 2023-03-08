@@ -6,8 +6,6 @@ local keymap = vim.api.nvim_set_keymap
 Simple maps
  ]]
 keymap('n', '<leader>/', ':nohl<CR>', opts)
-keymap('', '<leader>sf', [[:%s/\ \ \ \ /\t/g<CR>]], opts)
-keymap('', '<leader>st', [[:%s/\ \ /\t/g<CR>]], opts)
 keymap('v', '<Tab>', [[: ><CR>]], opts)
 keymap('v', '<S-Tab>', [[: <<CR>]], opts)
 
@@ -78,8 +76,8 @@ keymap('n', '<F12>', '<cmd>:lua require("dap").step_out()<cr>', opts)
 LuaSnip
  ]]
 -- For changing choices in choiceNodes (not strictly necessary for a basic setup).
-keymap("i", "<c-n>", '<cmd>:lua require("luasnip").change_choice(1)<cr>', opts)
-keymap("i", "<c-p>", '<cmd>:lua require("luasnip").change_choice(-1)<cr>', opts)
+keymap('i', '<c-n>', '<cmd>:lua require("luasnip").change_choice(1)<cr>', opts)
+keymap('i', '<c-p>', '<cmd>:lua require("luasnip").change_choice(-1)<cr>', opts)
 
 --[[
 treesitter-cpp-tools

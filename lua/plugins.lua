@@ -5,10 +5,10 @@ else it will simply return false
 ]]
 local ensure_packer = function()
   local fn = vim.fn
-  local install_path = fn.stdpath 'data' .. '/site/pack/packer/start/packer.nvim'
+  local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
   if fn.empty(fn.glob(install_path)) > 0 then
     fn.system { 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path }
-    vim.cmd [[packadd packer.nvim]]
+    vim.cmd([[packadd packer.nvim]])
     return true
   end
   return false
@@ -17,16 +17,16 @@ end
 local packer_bootstrap = ensure_packer()
 
 -- configure Neovim to automatically run :PackerCompile whenever plugins.lua is updated
-vim.cmd [[
+vim.cmd([[
 	augroup packer_user_config
 		autocmd!
 		autocmd BufWritePost plugins.lua source <afile> | PackerCompile
 	augroup end
-]]
+]])
 
 return require('packer').startup(function(use)
   -- Packer can manage itself
-  use 'wbthomason/packer.nvim'
+  use('wbthomason/packer.nvim')
 
   --[[
 Appearance
@@ -34,7 +34,7 @@ Appearance
   use {
     'Mofiqul/vscode.nvim',
     config = function()
-      require 'plugins.vscode'
+      require('plugins.vscode')
     end,
   }
 
@@ -43,19 +43,19 @@ Appearance
     'nvim-lualine/lualine.nvim',
     requires = 'kyazdani42/nvim-web-devicons',
     config = function()
-      require 'plugins.lualine'
+      require('plugins.lualine')
     end,
   }
 
   -- Super fast git decorations
-  use 'lewis6991/gitsigns.nvim'
+  use('lewis6991/gitsigns.nvim')
 
   -- Tabs
   use {
     'akinsho/bufferline.nvim',
     requires = 'kyazdani42/nvim-web-devicons',
     config = function()
-      require 'plugins.bufferline'
+      require('plugins.bufferline')
     end,
   }
 
@@ -63,7 +63,7 @@ Appearance
   use {
     'nvim-treesitter/nvim-treesitter',
     config = function()
-      require 'plugins.treesitter'
+      require('plugins.treesitter')
     end,
   }
 
@@ -71,7 +71,7 @@ Appearance
   use {
     'onsails/lspkind.nvim',
     config = function()
-      require 'plugins.lspkind'
+      require('plugins.lspkind')
     end,
   }
 
@@ -88,7 +88,7 @@ LSP
       'ray-x/lsp_signature.nvim',
     },
     config = function()
-      require 'plugins.lsp.init'
+      require('plugins.lsp.init')
     end,
   }
   use {
@@ -100,28 +100,25 @@ Autocompletion
 ]]
   use {
     'hrsh7th/nvim-cmp',
-
     requires = {
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-buffer',
       'hrsh7th/cmp-path',
       'hrsh7th/cmp-cmdline',
     },
-
     config = function()
-      require 'plugins.cmp'
+      require('plugins.cmp')
     end,
   }
 
   use {
     'L3MON4D3/LuaSnip',
-
     requires = {
       'saadparwaiz1/cmp_luasnip',
       'subado/friendly-snippets',
     },
     config = function()
-      require 'plugins.luasnip'
+      require('plugins.luasnip')
     end,
   }
 
@@ -134,7 +131,7 @@ Autocompletion
     'kyazdani42/nvim-tree.lua',
     requires = 'kyazdani42/nvim-web-devicons',
     config = function()
-      require 'plugins.tree'
+      require('plugins.tree')
     end,
   }
 
@@ -142,7 +139,7 @@ Autocompletion
   use {
     'majutsushi/tagbar',
     config = function()
-      require 'plugins.tagbar'
+      require('plugins.tagbar')
     end,
   }
 
@@ -151,7 +148,7 @@ Autocompletion
     'nvim-telescope/telescope.nvim',
     requires = { { 'nvim-lua/plenary.nvim' } },
     config = function()
-      require 'plugins.telescope'
+      require('plugins.telescope')
     end,
   }
 
@@ -161,7 +158,7 @@ Autocompletion
   use {
     'mfussenegger/nvim-dap',
     config = function()
-      require 'plugins.dap.init'
+      require('plugins.dap.init')
     end,
   }
 
@@ -179,29 +176,29 @@ Autocompletion
   use {
     'windwp/nvim-autopairs',
     config = function()
-      require 'plugins.autopairs'
+      require('plugins.autopairs')
     end,
   }
 
   -- comfortable text commenting
-  use 'b3nj5m1n/kommentary'
+  use('b3nj5m1n/kommentary')
 
   if packer_bootstrap then
     require('packer').sync()
   end
 
-  use 'powerman/vim-plugin-ruscmd'
+  use('powerman/vim-plugin-ruscmd')
 
   -- Adds indentation guides to all lines
   use {
     'lukas-reineke/indent-blankline.nvim',
     config = function()
-      require 'plugins.indent_blankline'
+      require('plugins.indent_blankline')
     end,
   }
 
   -- Highlight colors with neovim
-  use 'brenoprata10/nvim-highlight-colors'
+  use('brenoprata10/nvim-highlight-colors')
 
   -- Preview markdown on your modern browser with synchronised scrolling and flexible configuration
   use {
@@ -210,7 +207,7 @@ Autocompletion
       vim.fn['mkdp#util#install']()
     end,
     config = function()
-      require 'plugins.markdown-preview'
+      require('plugins.markdown-preview')
     end,
   }
 
@@ -219,7 +216,7 @@ Autocompletion
     requires = { 'nvim-treesitter/nvim-treesitter' },
     'Badhi/nvim-treesitter-cpp-tools',
     config = function()
-      require 'plugins.treesitter-cpp-tools'
+      require('plugins.treesitter-cpp-tools')
     end,
   }
 

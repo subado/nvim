@@ -1,3 +1,3 @@
-require("mason-nvim-dap").setup({
-		ensure_installed = { "python", "cppdbg", "sh"},
-})
+require('mason-nvim-dap').setup {
+  ensure_installed = { 'python', 'cppdbg', 'sh' },
+}
