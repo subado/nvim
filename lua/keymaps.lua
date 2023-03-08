@@ -16,6 +16,7 @@ keymap('n', '<leader>ff', [[<cmd>lua require('telescope.builtin').find_files()<C
 keymap('n', '<leader>fg', [[<cmd>lua require('telescope.builtin').live_grep()<CR>]], opts)
 keymap('n', '<leader>fb', [[<cmd>lua require('telescope.builtin').buffers()<CR>]], opts)
 keymap('n', '<leader>fh', [[<cmd>lua require('telescope.builtin').help_tags()<CR>]], opts)
+keymap('n', '<leader>fc', [[<cmd>lua require('telescope.builtin').highlights()<CR>]], opts)
 
 --[[
 Bufferline

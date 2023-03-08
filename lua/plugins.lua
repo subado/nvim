@@ -31,13 +31,6 @@ return require('packer').startup(function(use)
   --[[
 Appearance
 ]]
-  use {
-    'Mofiqul/vscode.nvim',
-    config = function()
-      require('plugins.vscode')
-    end,
-  }
-
   -- Status line
   use {
     'nvim-lualine/lualine.nvim',
@@ -222,6 +215,12 @@ Autocompletion
 
   use {
     'jose-elias-alvarez/null-ls.nvim',
+  }
+  use {
+    'Mofiqul/vscode.nvim',
+    config = function()
+      require('plugins.vscode')
+    end,
   }
 
   -- Automatically set up your configuration after cloning packer.nvim
