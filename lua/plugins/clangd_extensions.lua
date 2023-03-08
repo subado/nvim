@@ -8,7 +8,7 @@ local M = require('clangd_extensions').prepare {
   server = {
     -- options to pass to nvim-lspconfig
     -- i.e. the arguments to require("lspconfig").clangd.setup({})
-    cmd = { 'clangd', '--completion-style=detailed' },
+    cmd = { 'clangd', '--completion-style=detailed', '--offset-encoding=utf-16' },
   },
   extensions = {
     -- defaults:
@@ -52,7 +52,6 @@ local M = require('clangd_extensions').prepare {
         statement = '',
         ['template argument'] = '',
       },
-
       kind_icons = {
         Compound = '',
         Recovery = '',
@@ -62,7 +61,6 @@ local M = require('clangd_extensions').prepare {
         TemplateTemplateParm = '',
         TemplateParamObject = '',
       },
-
       highlights = {
         detail = 'Comment',
       },
