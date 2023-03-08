@@ -8,6 +8,7 @@ local sources = {
   formatting.stylua,
   formatting.prettierd,
   formatting.clang_format,
+  formatting.autoflake,
   code_actions.eslint_d,
   diagnostics.eslint_d.with {
     diagnostics_format = '[eslint] #{m}\n(#{c})',
