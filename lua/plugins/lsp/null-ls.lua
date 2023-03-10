@@ -6,9 +6,10 @@ local diagnostics = null_ls.builtins.diagnostics
 
 local sources = {
   formatting.stylua,
-  formatting.prettierd,
   formatting.clang_format,
   formatting.autoflake,
+  formatting.prettierd,
+  formatting.eslint_d,
   code_actions.eslint_d,
   diagnostics.eslint_d.with {
     diagnostics_format = '[eslint] #{m}\n(#{c})',

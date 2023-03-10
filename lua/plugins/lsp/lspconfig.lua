@@ -3,6 +3,9 @@ local custom_on_attach = function(client, bufnr) end
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
+  if client.name == 'tsserver' then
+    client.server_capabilities.documentFormattingProvider = false
+  end
   -- Mappings.
   -- See `:help vim.lsp.*` for documentation on any of the below functions
   local bufopts = { noremap = true, silent = true, buffer = bufnr }

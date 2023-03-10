@@ -10,6 +10,7 @@ require('mason-tool-installer').setup {
     { 'prettierd' },
     { 'stylua' },
     { 'autoflake' },
+    { 'eslint_d' },
   },
   -- if set to true this will check each tool for updates. If updates
   -- are available the tool will be updated. This setting does not
