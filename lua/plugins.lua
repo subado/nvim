@@ -41,8 +41,12 @@ Appearance
   }
 
   -- Super fast git decorations
-  use('lewis6991/gitsigns.nvim')
-
+  use {
+    'lewis6991/gitsigns.nvim',
+    config = function()
+      require('plugins.gitsigns')
+    end,
+  }
   -- Tabs
   use {
     'akinsho/bufferline.nvim',
