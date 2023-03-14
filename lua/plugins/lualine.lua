@@ -15,7 +15,7 @@ require('lualine').setup {
       'branch',
       {
         'diff',
-        symbols = { added = ' ', modified = '柳 ', removed = ' ' },
+        symbols = { added = ' ', modified = ' ', removed = ' ' },
       },
     },
     lualine_c = {
