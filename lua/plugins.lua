@@ -184,8 +184,6 @@ Autocompletion
     require('packer').sync()
   end
 
-  use('powerman/vim-plugin-ruscmd')
-
   -- Adds indentation guides to all lines
   use {
     'lukas-reineke/indent-blankline.nvim',
@@ -226,7 +224,12 @@ Autocompletion
       require('plugins.vscode')
     end,
   }
-
+  use {
+    'aveplen/ruscmd.nvim',
+    config = function()
+      require('ruscmd').setup {}
+    end,
+  }
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then
