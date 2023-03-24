@@ -9,11 +9,13 @@ local sources = {
   formatting.clang_format,
   formatting.autoflake,
   formatting.prettierd,
+  formatting.codespell,
   formatting.eslint_d,
   code_actions.eslint_d,
   diagnostics.eslint_d.with {
     diagnostics_format = '[eslint] #{m}\n(#{c})',
   },
+  diagnostics.codespell,
 }
 
 local augroup = vim.api.nvim_create_augroup('LspFormatting', {})
