@@ -63,7 +63,6 @@ Appearance
       require('plugins.treesitter')
     end,
   }
-
   -- Icons
   use {
     'onsails/lspkind.nvim',
@@ -214,7 +213,6 @@ Autocompletion
       require('plugins.treesitter-cpp-tools')
     end,
   }
-
   use {
     'jose-elias-alvarez/null-ls.nvim',
   }
