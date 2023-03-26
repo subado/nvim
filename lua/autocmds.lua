@@ -53,3 +53,6 @@ highlight! CmpItemKindUnit guibg=NONE guifg=#D4D4D4
 cmd([[
 set mouse=a
 ]])
+cmd([[
+au BufRead,BufNewFile *.tpp  set filetype=cpp
+]])
