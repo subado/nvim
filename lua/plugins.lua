@@ -31,6 +31,20 @@ return require('packer').startup(function(use)
   --[[
 Appearance
 ]]
+  use {
+    'Mofiqul/vscode.nvim',
+    config = function()
+      require('plugins.vscode')
+    end,
+  }
+  -- Highlight, edit, and navigate code using a fast incremental parsing library
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    config = function()
+      require('plugins.treesitter')
+    end,
+  }
+
   -- Status line
   use {
     'nvim-lualine/lualine.nvim',
@@ -56,13 +70,6 @@ Appearance
     end,
   }
 
-  -- Highlight, edit, and navigate code using a fast incremental parsing library
-  use {
-    'nvim-treesitter/nvim-treesitter',
-    config = function()
-      require('plugins.treesitter')
-    end,
-  }
   -- Icons
   use {
     'onsails/lspkind.nvim',
@@ -87,6 +94,7 @@ LSP
       require('plugins.lsp.init')
     end,
   }
+
   use {
     'p00f/clangd_extensions.nvim',
   }
@@ -213,19 +221,15 @@ Autocompletion
       require('plugins.treesitter-cpp-tools')
     end,
   }
+
   use {
     'jose-elias-alvarez/null-ls.nvim',
   }
+
   use {
-    'Mofiqul/vscode.nvim',
+    'Wansmer/langmapper.nvim',
     config = function()
-      require('plugins.vscode')
-    end,
-  }
-  use {
-    'aveplen/ruscmd.nvim',
-    config = function()
-      require('ruscmd').setup {}
+      require('plugins.langmapper')
     end,
   }
   -- Automatically set up your configuration after cloning packer.nvim
