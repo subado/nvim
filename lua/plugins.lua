@@ -28,15 +28,30 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use('wbthomason/packer.nvim')
 
+  --[[ use {
+    'Wansmer/langmapper.nvim',
+    config = function()
+      require('plugins.langmapper')
+    end,
+  } ]]
   --[[
 Appearance
 ]]
   use {
     'Mofiqul/vscode.nvim',
     config = function()
-      require('plugins.vscode')
+      -- require('plugins.vscode')
     end,
   }
+
+  use {
+    'catppuccin/nvim',
+    as = 'catppuccin',
+    config = function()
+      require('plugins.catppuccin')
+    end,
+  }
+
   -- Highlight, edit, and navigate code using a fast incremental parsing library
   use {
     'nvim-treesitter/nvim-treesitter',
@@ -63,6 +78,7 @@ Appearance
   }
   -- Tabs
   use {
+    after = 'catppuccin',
     'akinsho/bufferline.nvim',
     requires = 'kyazdani42/nvim-web-devicons',
     config = function()
@@ -130,7 +146,6 @@ Autocompletion
   -- Files
   -- ]]
 
-  -- Highly extendable fuzzy finder
   use {
     'kyazdani42/nvim-tree.lua',
     requires = 'kyazdani42/nvim-web-devicons',
@@ -226,12 +241,6 @@ Autocompletion
     'jose-elias-alvarez/null-ls.nvim',
   }
 
-  use {
-    'Wansmer/langmapper.nvim',
-    config = function()
-      require('plugins.langmapper')
-    end,
-  }
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then
