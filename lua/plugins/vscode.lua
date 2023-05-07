@@ -6,8 +6,8 @@ local c = require('vscode.colors').get_colors()
 require('vscode').setup {
   -- Enable italic comment
   italic_comments = true,
-  -- Enable transparent background
-  transparent = true,
+  -- Disable transparent background
+  transparent = false,
   -- Disable nvim-tree background color
   disable_nvimtree_bg = true,
   -- Override colors (see ./lua/vscode/colors.lua)
