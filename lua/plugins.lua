@@ -40,7 +40,7 @@ Appearance
   use {
     'Mofiqul/vscode.nvim',
     config = function()
-      -- require('plugins.vscode')
+      require('plugins.vscode')
     end,
   }
 
@@ -48,8 +48,12 @@ Appearance
     'catppuccin/nvim',
     as = 'catppuccin',
     config = function()
-      require('plugins.catppuccin')
+      -- require('plugins.catppuccin')
     end,
+  }
+
+  use {
+    'aktersnurra/no-clown-fiesta.nvim',
   }
 
   -- Highlight, edit, and navigate code using a fast incremental parsing library
@@ -78,7 +82,7 @@ Appearance
   }
   -- Tabs
   use {
-    after = 'catppuccin',
+    after = 'Mofiqul/vscode.nvim',
     'akinsho/bufferline.nvim',
     requires = 'kyazdani42/nvim-web-devicons',
     config = function()
@@ -187,6 +191,10 @@ Autocompletion
 
   use {
     'jayp0521/mason-nvim-dap.nvim',
+  }
+
+  use {
+    'mfussenegger/nvim-dap-python',
   }
 
   -- [[
