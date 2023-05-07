@@ -64,6 +64,14 @@ dap.configurations.cpp = {
 --[[
 cpptools
  ]]
+local setupCommands = {
+  {
+    text = '-enable-pretty-printing',
+    description = 'enable pretty printing',
+    ignoreFailures = true,
+  },
+}
+
 dap.adapters.cppdbg = {
   id = 'cppdbg',
   type = 'executable',
@@ -79,14 +87,28 @@ dap.configurations.cpp = {
     end,
     cwd = '${workspaceFolder}',
     stopAtEntry = true,
-    setupCommands = {
-      {
-        text = '-enable-pretty-printing',
-        description = 'enable pretty printing',
-        ignoreFailures = true,
-      },
-    },
+    setupCommands = setupCommands,
   },
+  {
+    name = 'Launch file with args',
+    type = 'cppdbg',
+    request = 'launch',
+    program = function()
+      return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+    end,
+    args = function()
+      local args = {}
+      local args_string = vim.fn.input('Args: ')
+      for word in args_string:gmatch('%S+') do
+        table.insert(args, word)
+      end
+      return args
+    end,
+    cwd = '${workspaceFolder}',
+    stopAtEntry = true,
+    setupCommands = setupCommands,
+  },
+
   {
     name = 'Attach to gdbserver :1234',
     type = 'cppdbg',
@@ -98,12 +120,6 @@ dap.configurations.cpp = {
     program = function()
       return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
     end,
-    setupCommands = {
-      {
-        text = '-enable-pretty-printing',
-        description = 'enable pretty printing',
-        ignoreFailures = true,
-      },
-    },
+    setupCommands = setupCommands,
   },
 }
