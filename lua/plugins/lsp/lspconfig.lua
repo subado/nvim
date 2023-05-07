@@ -1,4 +1,5 @@
-local custom_on_attach = function(client, bufnr) end
+local custom_on_attach = function(client, bufnr)
+end
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -41,13 +42,17 @@ local default = {
 }
 
 for _, server in ipairs(lsp_servers) do
-  local custom = require('plugins.lsp.configs.' .. server)
+  local has_custom, custom = pcall(require, 'plugins.lsp.configs.' .. server)
 
-  if custom.on_attach ~= nil then
-    custom_on_attach = custom.on_attach
-  end
-  for k, v in pairs(default) do
-    custom[k] = v
+  if has_custom then
+    if custom.on_attach ~= nil then
+      custom_on_attach = custom.on_attach
+    end
+    for k, v in pairs(default) do
+      custom[k] = v
+    end
+  else
+    custom = default
   end
 
   require('lspconfig')[server].setup(custom)
