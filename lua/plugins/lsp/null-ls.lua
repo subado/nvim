@@ -9,6 +9,7 @@ local sources = {
   formatting.clang_format,
   formatting.autoflake,
   formatting.prettierd,
+  formatting.xmlformat,
   formatting.codespell,
   formatting.eslint_d,
   code_actions.eslint_d,
