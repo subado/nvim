@@ -1,5 +1,4 @@
-local custom_on_attach = function(client, bufnr)
-end
+local custom_on_attach = function(client, bufnr) end
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
