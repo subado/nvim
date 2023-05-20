@@ -82,7 +82,7 @@ Appearance
   }
   -- Tabs
   use {
-    after = 'Mofiqul/vscode.nvim',
+    after = 'vscode.nvim',
     'akinsho/bufferline.nvim',
     requires = 'kyazdani42/nvim-web-devicons',
     config = function()
@@ -117,6 +117,10 @@ LSP
 
   use {
     'p00f/clangd_extensions.nvim',
+  }
+
+  use {
+    'jose-elias-alvarez/null-ls.nvim',
   }
 
   --[[
@@ -210,10 +214,6 @@ Autocompletion
   -- comfortable text commenting
   use('b3nj5m1n/kommentary')
 
-  if packer_bootstrap then
-    require('packer').sync()
-  end
-
   -- Adds indentation guides to all lines
   use {
     'lukas-reineke/indent-blankline.nvim',
@@ -225,6 +225,18 @@ Autocompletion
   -- Highlight colors with neovim
   use('brenoprata10/nvim-highlight-colors')
 
+  -- Experimental treesitter based neovim plugin to create intelligent implementations for C++
+  use {
+    requires = { 'nvim-treesitter/nvim-treesitter' },
+    'Badhi/nvim-treesitter-cpp-tools',
+    config = function()
+      require('plugins.treesitter-cpp-tools')
+    end,
+  }
+
+  -- [[
+  -- Filetype support
+  -- ]]
   -- Preview markdown on your modern browser with synchronised scrolling and flexible configuration
   use {
     'iamcco/markdown-preview.nvim',
@@ -236,17 +248,11 @@ Autocompletion
     end,
   }
 
-  -- Experimental treesitter based neovim plugin to create intelligent implementations for C++
   use {
-    requires = { 'nvim-treesitter/nvim-treesitter' },
-    'Badhi/nvim-treesitter-cpp-tools',
-    config = function()
-      require('plugins.treesitter-cpp-tools')
-    end,
-  }
-
-  use {
-    'jose-elias-alvarez/null-ls.nvim',
+    'chrisbra/csv.vim',
+    --[[ config = function()
+      require('plugins.markdown-preview')
+    end, ]]
   }
 
   -- Automatically set up your configuration after cloning packer.nvim
