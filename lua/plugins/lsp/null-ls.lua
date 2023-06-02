@@ -11,6 +11,8 @@ local sources = {
   formatting.prettierd,
   formatting.xmlformat,
   formatting.codespell,
+  formatting.shellharden,
+  formatting.shfmt,
   formatting.eslint_d,
   code_actions.eslint_d,
   diagnostics.eslint_d.with {
