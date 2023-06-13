@@ -63,7 +63,7 @@ keymap('n', '<C-w>m', ':MarkdownPreviewToggle<cr>', opts)
 --[[
 Highlight colors
  ]]
-keymap('n', '<C-c>', ':HighlightColorsToggle<cr>', opts)
+keymap('n', '<C-c>', ':CccHighlighterToggle<cr>', opts)
 
 --[[
 nvim-dap

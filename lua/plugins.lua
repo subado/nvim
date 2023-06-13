@@ -223,7 +223,12 @@ Autocompletion
   }
 
   -- Highlight colors with neovim
-  use('brenoprata10/nvim-highlight-colors')
+  use {
+    'uga-rosa/ccc.nvim',
+    config = function()
+      require('plugins.ccc')
+    end,
+  }
 
   -- Experimental treesitter based neovim plugin to create intelligent implementations for C++
   use {
