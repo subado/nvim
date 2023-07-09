@@ -5,6 +5,7 @@ local code_actions = null_ls.builtins.code_actions
 local diagnostics = null_ls.builtins.diagnostics
 
 local sources = {
+  -- Formatting
   formatting.stylua,
   formatting.clang_format,
   formatting.autoflake,
@@ -14,7 +15,11 @@ local sources = {
   formatting.shellharden,
   formatting.shfmt,
   formatting.eslint_d,
+  -- Code actions
+  code_actions.shellcheck,
   code_actions.eslint_d,
+  -- Diagnostics
+  diagnostics.shellcheck,
   diagnostics.eslint_d.with {
     diagnostics_format = '[eslint] #{m}\n(#{c})',
   },
