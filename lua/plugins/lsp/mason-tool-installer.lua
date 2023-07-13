@@ -3,9 +3,10 @@ require('mason-tool-installer').setup {
   -- start; they should be the names Mason uses for each tool
   ensure_installed = {
     -- you can turn off/on auto_update per tool
-    --Linters
+    -- Linters
     { 'eslint_d' },
     { 'codespell' },
+    { 'shellcheck' },
 
     -- Formatters
     { 'autoflake' },
@@ -13,6 +14,7 @@ require('mason-tool-installer').setup {
     { 'prettierd' },
     { 'stylua' },
     { 'xmlformatter' },
+    { 'shellharden' },
   },
   -- if set to true this will check each tool for updates. If updates
   -- are available the tool will be updated. This setting does not
