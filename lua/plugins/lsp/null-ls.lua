@@ -19,7 +19,6 @@ local sources = {
   code_actions.shellcheck,
   code_actions.eslint_d,
   -- Diagnostics
-  diagnostics.shellcheck,
   diagnostics.eslint_d.with {
     diagnostics_format = '[eslint] #{m}\n(#{c})',
   },
