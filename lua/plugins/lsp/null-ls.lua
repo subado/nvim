@@ -24,12 +24,16 @@ local sources = {
   },
   diagnostics.codespell,
 }
-
+local no_auto_formatting = { 'sh' }
 local augroup = vim.api.nvim_create_augroup('LspFormatting', {})
-require('null-ls').setup {
+null_ls.setup {
   sources = sources,
-  -- you can reuse a shared lspconfig on_attach callback here
   on_attach = function(client, bufnr)
+    for _, name in ipairs(no_auto_formatting) do
+      if name == vim.filetype.match { buf = bufnr } then
+        return
+      end
+    end
     if client.supports_method('textDocument/formatting') then
       vim.api.nvim_clear_autocmds { group = augroup, buffer = bufnr }
       vim.api.nvim_create_autocmd('BufWritePre', {
