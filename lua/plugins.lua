@@ -231,4 +231,7 @@ require('lazy').setup {
       require('plugins.markdown-preview')
     end, ]]
   },
+  {
+    'phelipetls/vim-hugo',
+  },
 }
