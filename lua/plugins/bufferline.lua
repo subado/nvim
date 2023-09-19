@@ -2,9 +2,9 @@ local C = require('vscode.colors').get_colors()
 
 require('bufferline').setup {
   options = {
-    buffer_close_icon = '',
+    buffer_close_icon = '󰅖',
     close_command = 'bdelete %d',
-    close_icon = '',
+    close_icon = '󰅖',
     indicator = {
       style = 'icon',
       icon = ' ',
