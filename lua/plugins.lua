@@ -51,7 +51,7 @@ require('lazy').setup {
   -- Status line
   {
     'nvim-lualine/lualine.nvim',
-    dependencies = 'kyazdani42/nvim-web-devicons',
+    dependencies = 'nvim-tree/nvim-web-devicons',
     config = function()
       require('plugins.lualine')
     end,
@@ -66,7 +66,7 @@ require('lazy').setup {
   {
     after = 'vscode.nvim',
     'akinsho/bufferline.nvim',
-    dependencies = 'kyazdani42/nvim-web-devicons',
+    dependencies = 'nvim-tree/nvim-web-devicons',
     config = function()
       require('plugins.bufferline')
     end,
@@ -140,7 +140,7 @@ require('lazy').setup {
 
   {
     'kyazdani42/nvim-tree.lua',
-    dependencies = 'kyazdani42/nvim-web-devicons',
+    dependencies = 'nvim-tree/nvim-web-devicons',
     config = function()
       require('plugins.tree')
     end,
