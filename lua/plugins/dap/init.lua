@@ -11,11 +11,15 @@ vim.fn.sign_define('DapStopped', { text = '➡️', texthl = '', linehl = '', nu
 --[[
 Languages configurations
  ]]
-require('plugins.dap.configs.cpp')
+
+local daps = require 'plugins.dap.daps'
+for _, adapter in ipairs(daps) do
+  pcall(require, 'plugins.dap.configs.' .. adapter)
+end
+
 -- Use cpp config for Rust and C
 dap.configurations.c = dap.configurations.cpp
 dap.configurations.rust = dap.configurations.cpp
 
-require('plugins.dap.configs.python')
 
 require('plugins.dap.dapui')
