@@ -155,7 +155,7 @@ require('lazy').setup {
   -- Replacing fzf and ack
   {
     'nvim-telescope/telescope.nvim',
-    dependencies = { { 'nvim-lua/plenary.nvim' } },
+    dependencies = { 'nvim-lua/plenary.nvim' },
     config = function()
       require('plugins.telescope')
     end,
@@ -165,18 +165,15 @@ require('lazy').setup {
   -- ]]
   {
     'mfussenegger/nvim-dap',
+    dependencies = {
+      'rcarriga/nvim-dap-ui',
+      'williamboman/mason.nvim',
+      'jayp0521/mason-nvim-dap.nvim',
+      'mfussenegger/nvim-dap-python'
+    },
     config = function()
       require('plugins.dap.init')
     end,
-  },
-  {
-    'rcarriga/nvim-dap-ui',
-  },
-  {
-    'jayp0521/mason-nvim-dap.nvim',
-  },
-  {
-    'mfussenegger/nvim-dap-python',
   },
   -- [[
   -- Sugar
@@ -226,11 +223,25 @@ require('lazy').setup {
     end,
   },
   {
-    'chrisbra/csv.vim',
-    --[[ config = function()
-      require('plugins.markdown-preview')
-    end, ]]
-  },
+    'cameron-wags/rainbow_csv.nvim',
+    config = function()
+      require('plugins.rainbow_csv')
+    end,
+    ft = {
+        'csv',
+        'tsv',
+        'csv_semicolon',
+        'csv_whitespace',
+        'csv_pipe',
+        'rfc_csv',
+        'rfc_semicolon'
+    },
+    cmd = {
+        'RainbowDelim',
+        'RainbowDelimSimple',
+        'RainbowDelimQuoted',
+        'RainbowMultiDelim'
+    }  },
   {
     'phelipetls/vim-hugo',
   },
