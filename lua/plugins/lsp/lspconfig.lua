@@ -34,7 +34,7 @@ end
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-local lsp_servers = require('mason-lspconfig').get_installed_servers()
+local lsp_servers = require 'plugins.lsp.servers'
 local default = {
   capabilities = capabilities,
   on_attach = on_attach,
