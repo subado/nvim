@@ -11,7 +11,6 @@ local sources = {
   formatting.autoflake,
   formatting.prettierd,
   formatting.xmlformat,
-  formatting.codespell,
   formatting.shellharden,
   formatting.shfmt,
   formatting.eslint_d,
