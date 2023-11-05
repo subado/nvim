@@ -1,5 +1,5 @@
 require('nvim-treesitter.configs').setup {
-  ensure_installed = { 'cpp', 'python', 'lua', 'bash', 'javascript', 'tsx', 'typescript' }, -- Only use parsers that are maintained
+  ensure_installed = { 'cpp', 'python', 'lua', 'bash', 'javascript', 'tsx', 'typescript', 'doxygen' }, -- Only use parsers that are maintained
 
   highlight = {
     enable = true,
