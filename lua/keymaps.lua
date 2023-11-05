@@ -87,3 +87,8 @@ treesitter-cpp-tools
 ]]
 keymap('v', '<C-d>', '<cmd>:TSCppDefineClassFunc<cr>', opts)
 keymap('n', '<C-d>', '<cmd>:TSCppDefineClassFunc<cr>', opts)
+
+--[[
+neogen
+  ]]
+keymap('n', '<Leader>nf', ':lua require("neogen").generate()<CR>', opts)

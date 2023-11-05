@@ -21,6 +21,7 @@
   "mason-nvim-dap.nvim": { "branch": "main", "commit": "f0cd12f7a8a310c58cecebddb6b219ffad1cfd0f" },
   "mason-tool-installer.nvim": { "branch": "main", "commit": "e4f34741daa9cf95de68a603d3e7a6844a69fdf0" },
   "mason.nvim": { "branch": "main", "commit": "eabf6d347fdb75be360d4c0ced1145670a171453" },
+  "neogen": { "branch": "main", "commit": "70127baaff25611deaf1a29d801fc054ad9d2dc1" },
   "no-clown-fiesta.nvim": { "branch": "master", "commit": "0b49a2d3be84fe77655f10d196954fcbcc7b9b9f" },
   "null-ls.nvim": { "branch": "main", "commit": "0010ea927ab7c09ef0ce9bf28c2b573fc302f5a7" },
   "nvim": { "branch": "main", "commit": "d7521f6050b94cb0e23067f63829d86886f870fe" },

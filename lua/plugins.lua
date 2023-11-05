@@ -248,4 +248,13 @@ require('lazy').setup {
   {
     'phelipetls/vim-hugo',
   },
+  {
+      'danymat/neogen',
+      dependencies = 'nvim-treesitter/nvim-treesitter',
+      config = function()
+        require('plugins.neogen')
+      end,
+      -- Uncomment next line if you want to follow only stable versions
+      -- version = '*'
+  },
 }
