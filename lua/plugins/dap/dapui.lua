@@ -1,4 +1,5 @@
 require('dapui').setup {
+  force_buffers = true,
   icons = { expanded = '', collapsed = '', current_frame = '' },
   mappings = {
     -- Use a table to apply multiple mappings
@@ -65,16 +66,15 @@ require('dapui').setup {
     },
   },
   floating = {
-    max_height = nil, -- These can be integers or a float between 0 and 1.
-    max_width = nil, -- Floats will be treated as percentage of your screen.
+    max_height = nil,  -- These can be integers or a float between 0 and 1.
+    max_width = nil,   -- Floats will be treated as percentage of your screen.
     border = 'single', -- Border style. Can be "single", "double" or "rounded"
     mappings = {
       close = { 'q', '<Esc>' },
     },
   },
-  windows = { indent = 1 },
   render = {
-    max_type_length = nil, -- Can be integer or nil.
+    indent = 1,
     max_value_lines = 100, -- Can be integer or nil.
   },
 }
