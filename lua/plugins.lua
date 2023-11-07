@@ -131,7 +131,7 @@ require('lazy').setup {
     'L3MON4D3/LuaSnip',
     dependencies = {
       'saadparwaiz1/cmp_luasnip',
-      'subado/friendly-snippets',
+      'rafamadriz/friendly-snippets',
     },
     config = function()
       require('plugins.luasnip')
