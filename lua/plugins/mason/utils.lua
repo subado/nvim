@@ -1,6 +1,6 @@
 local M = {}
 
-M.get_not_installed = function (items, to_package)
+M.get_not_installed = function(items, to_package)
   local result = {}
   local Package = require "mason-core.package"
   local Registry = require "mason-registry"
@@ -10,11 +10,14 @@ M.get_not_installed = function (items, to_package)
     local package_name = to_package[name]
     if package_name then
       local bin
-      for b, _ in pairs(Registry.get_package(package_name).spec.bin) do
-        bin = b
-      end
 
-      if vim.fn.executable(bin) ~= 1 then
+      local is_found, pckg = pcall(Registry.get_package, package_name)
+      if is_found then
+        for b, _ in pairs(pckg.spec.bin) do
+          bin = b
+        end
+      end
+      if not is_found or vim.fn.executable(bin) ~= 1 then
         table.insert(result, item)
       end
     end
