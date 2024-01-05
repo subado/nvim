@@ -134,7 +134,7 @@ require('lazy').setup {
       'rafamadriz/friendly-snippets',
     },
     config = function()
-      require('plugins.luasnip')
+      require('plugins.snippets.load')
     end,
   },
   -- [[
