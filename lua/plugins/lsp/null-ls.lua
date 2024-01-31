@@ -14,6 +14,7 @@ local sources = {
   formatting.shellharden,
   formatting.shfmt,
   formatting.eslint_d,
+  formatting.rustfmt,
   -- Code actions
   code_actions.shellcheck,
   code_actions.eslint_d,
