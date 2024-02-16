@@ -51,7 +51,7 @@ require('lazy').setup {
   -- Status line
   {
     'nvim-lualine/lualine.nvim',
-    dependencies = 'nvim-tree/nvim-web-devicons',
+    dependencies = { 'nvim-tree/nvim-web-devicons', 'vscode.nvim' },
     config = function()
       require('plugins.lualine')
     end,
@@ -64,9 +64,8 @@ require('lazy').setup {
     end,
   }, -- Tabs
   {
-    after = 'vscode.nvim',
     'akinsho/bufferline.nvim',
-    dependencies = 'nvim-tree/nvim-web-devicons',
+    dependencies = { 'vscode.nvim', 'nvim-tree/nvim-web-devicons' },
     config = function()
       require('plugins.bufferline')
     end,
@@ -104,6 +103,7 @@ require('lazy').setup {
     end,
   },
   {
+    dependencies = { 'neovim/nvim-lspconfig' },
     'p00f/clangd_extensions.nvim',
     config = function()
       require('plugins.clangd_extensions')
@@ -172,7 +172,7 @@ require('lazy').setup {
       'rcarriga/nvim-dap-ui',
       'williamboman/mason.nvim',
       'jayp0521/mason-nvim-dap.nvim',
-      'mfussenegger/nvim-dap-python'
+      'mfussenegger/nvim-dap-python',
     },
     config = function()
       require('plugins.dap.init')
@@ -231,30 +231,31 @@ require('lazy').setup {
       require('plugins.rainbow_csv')
     end,
     ft = {
-        'csv',
-        'tsv',
-        'csv_semicolon',
-        'csv_whitespace',
-        'csv_pipe',
-        'rfc_csv',
-        'rfc_semicolon'
+      'csv',
+      'tsv',
+      'csv_semicolon',
+      'csv_whitespace',
+      'csv_pipe',
+      'rfc_csv',
+      'rfc_semicolon',
     },
     cmd = {
-        'RainbowDelim',
-        'RainbowDelimSimple',
-        'RainbowDelimQuoted',
-        'RainbowMultiDelim'
-    }  },
+      'RainbowDelim',
+      'RainbowDelimSimple',
+      'RainbowDelimQuoted',
+      'RainbowMultiDelim',
+    },
+  },
   {
     'phelipetls/vim-hugo',
   },
   {
-      'danymat/neogen',
-      dependencies = 'nvim-treesitter/nvim-treesitter',
-      config = function()
-        require('plugins.neogen')
-      end,
-      -- Uncomment next line if you want to follow only stable versions
-      -- version = '*'
+    'danymat/neogen',
+    dependencies = 'nvim-treesitter/nvim-treesitter',
+    config = function()
+      require('plugins.neogen')
+    end,
+    -- Uncomment next line if you want to follow only stable versions
+    -- version = '*'
   },
 }
