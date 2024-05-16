@@ -11,5 +11,6 @@ local M = {
   -- 'neocmake',
   'svelte',
   'rust_analyzer',
+  'bufls',
 }
 return M
