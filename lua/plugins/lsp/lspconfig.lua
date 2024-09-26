@@ -2,7 +2,7 @@
 -- after the language server attaches to the current buffer
 local on_attach_wrapper = function(fn)
   return function(client, bufnr)
-    if client.name == 'tsserver' then
+    if client.name == 'ts_ls' then
       client.server_capabilities.documentFormattingProvider = false
     end
     -- Mappings.

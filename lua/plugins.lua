@@ -13,12 +13,12 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup {
 
-  --[[ {
+  {
     'Wansmer/langmapper.nvim',
     config = function()
       require('plugins.langmapper')
     end,
-  }, ]]
+  },
 
   -- [[
   -- Appearance
@@ -40,6 +40,9 @@ require('lazy').setup {
 
   {
     'aktersnurra/no-clown-fiesta.nvim',
+    config = function()
+      require('plugins.no-clown-fiesta')
+    end,
   },
   -- Highlight, edit, and navigate code using a fast incremental parsing library
   {
@@ -65,6 +68,7 @@ require('lazy').setup {
   }, -- Tabs
   {
     'akinsho/bufferline.nvim',
+    version = '*',
     dependencies = { 'vscode.nvim', 'nvim-tree/nvim-web-devicons' },
     config = function()
       require('plugins.bufferline')
@@ -173,6 +177,7 @@ require('lazy').setup {
       'williamboman/mason.nvim',
       'jayp0521/mason-nvim-dap.nvim',
       'mfussenegger/nvim-dap-python',
+      'nvim-neotest/nvim-nio',
     },
     config = function()
       require('plugins.dap.init')

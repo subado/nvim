@@ -3,7 +3,7 @@
 require('lualine').setup {
   options = {
     icons_enabled = true,
-    theme = 'vscode',
+    theme = 'no-clown-fiesta',
     component_separators = { left = '', right = '' },
     section_separators = { left = '', right = '' },
     disabled_filetypes = {},
@@ -42,7 +42,7 @@ require('lualine').setup {
           return msg
         end,
         icon = ' LSP:',
-        color = { fg = '#56b6c2' },
+        -- color = { fg = '#56b6c2' },
       },
     },
     lualine_x = {

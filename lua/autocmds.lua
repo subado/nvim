@@ -56,3 +56,7 @@ set mouse=a
 cmd([[
 au BufRead,BufNewFile *.tpp  set filetype=cpp
 ]])
+
+cmd([[
+colorscheme no-clown-fiesta
+]])

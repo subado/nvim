@@ -4,7 +4,7 @@ local M = {
   'pylsp',
   'bashls',
   'html',
-  'tsserver',
+  'ts_ls',
   'cssls',
   'tailwindcss',
   'kotlin_language_server',

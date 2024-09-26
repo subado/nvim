@@ -1,5 +1,3 @@
-local C = require('vscode.colors').get_colors()
-
 require('bufferline').setup {
   options = {
     buffer_close_icon = '󰅖',
@@ -17,7 +15,8 @@ require('bufferline').setup {
     show_close_icon = false,
     show_tab_indicators = true,
   },
-  highlights = {
+}
+--[[ highlights = {
     -- buffers
     background = { fg = C.vscCursorLight, bg = C.vscTabOther },
     buffer_visible = { fg = C.vscCursorLight, bg = C.vscTabOther },
@@ -82,5 +81,5 @@ require('bufferline').setup {
     -- Modified
     modified = { fg = C.vscGitModified, bg = C.vscTabOther },
     modified_selected = { fg = C.vscGitModified, bg = C.vscTabCurrent },
-  },
-}
+  }, ]]
+-- }
