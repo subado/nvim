@@ -1,6 +1,16 @@
 local opts = { noremap = true, silent = true }
 
-local keymap = vim.api.nvim_set_keymap
+local keymap = function(...)
+  local mode = select(1, ...)
+  local others = { select(2, ...) }
+  if type(mode) == 'table' then
+    for _, v in ipairs(mode) do
+      vim.api.nvim_set_keymap(v, unpack(others))
+    end
+  else
+    vim.api.nvim_set_keymap(mode, unpack(others))
+  end
+end
 
 --[[
 Simple maps
@@ -10,6 +20,7 @@ keymap('v', '<Tab>', [[: ><CR>]], opts)
 keymap('v', '<S-Tab>', [[: <<CR>]], opts)
 keymap('n', '<C-w>,', [[<cmd>vert res -10<CR>]], opts)
 keymap('n', '<C-w>.', [[<cmd>vert res +10<CR>]], opts)
+keymap({ '', '!' }, '<A-s>', '<cmd>w<cr><esc>', opts)
 
 --[[
 Telescope
