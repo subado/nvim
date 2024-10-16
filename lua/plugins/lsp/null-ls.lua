@@ -23,6 +23,7 @@ local sources = {
     diagnostics_format = '[eslint] #{m}\n(#{c})',
   },
   diagnostics.codespell,
+  diagnostics.yamllint,
 }
 local no_auto_formatting = { 'sh' }
 local augroup = vim.api.nvim_create_augroup('LspFormatting', {})
