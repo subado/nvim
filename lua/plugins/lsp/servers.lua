@@ -12,5 +12,6 @@ local M = {
   'svelte',
   'rust_analyzer',
   'bufls',
+  'dotls',
 }
 return M
